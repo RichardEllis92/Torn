@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public string levelToLoad;
+    public GameObject controlsPanel;
 
     public void StartGame()
     {
-        //DialogueUI.instance.talkedToGuide = false;
         SceneManager.LoadScene(levelToLoad);
     }
 
@@ -18,4 +18,13 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
+    public void Contols()
+    {
+        controlsPanel.SetActive(true);
+    }
+
+    public void HideControls()
+    {
+        controlsPanel.SetActive(false);
+    }
 }

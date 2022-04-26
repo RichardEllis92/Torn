@@ -128,6 +128,7 @@ public class BossController : MonoBehaviour
             LevelManager.instance.bossDoor.SetActive(false);
 
             AudioManager.instance.PlaySFX(13);
+            AudioManager.instance.PlayChoiceMusic();
 
             if (Vector3.Distance(PlayerController.instance.transform.position, levelExit.transform.position) < 2f)
             {

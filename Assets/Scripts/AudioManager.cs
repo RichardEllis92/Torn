@@ -6,25 +6,13 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
 
-    public AudioSource levelMusic, gameOverMusic, winMusic;
+    public AudioSource levelMusic, gameOverMusic, winMusic, choiceMusic, secretEndingMusic;
 
     public AudioSource[] sfx;
 
     private void Awake()
     {
         instance = this;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void PlayGameOver()
@@ -48,5 +36,17 @@ public class AudioManager : MonoBehaviour
     public void StopSFX(int sfxToPlay)
     {
         sfx[sfxToPlay].Stop();
+    }
+
+    public void PlayChoiceMusic()
+    {
+        levelMusic.Stop();
+        choiceMusic.Play();
+    }
+
+    public void PlaySecretEndingMusic()
+    {
+        choiceMusic.Stop();
+        secretEndingMusic.Play();
     }
 }

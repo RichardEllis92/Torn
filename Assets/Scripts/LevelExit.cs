@@ -46,6 +46,7 @@ public class LevelExit : MonoBehaviour
             else
             {
                 secretEndingScreen.SetActive(true);
+                AudioManager.instance.PlaySecretEndingMusic();
             }
         }
     }
